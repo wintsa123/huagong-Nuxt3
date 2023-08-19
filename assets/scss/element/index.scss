@@ -1,0 +1,37 @@
+$-colors: (
+  'primary': (
+    'base': rgba(107,33,168, 1),
+  ),
+  'success': (
+    'base': #67c23a,
+  ),
+  'warning': (
+    'base': #e6a23c,
+  ),
+  'danger': (
+    'base': #f56c6c,
+  ),
+  'error': (
+    'base': #f56c6c,
+  ),
+  'info': (
+    'base': #909399,
+  ),
+);
+
+
+$-header: (
+      "padding": 0px,
+);
+$--el-menu-item-font-size:20px ;
+$--el-font-size-base: 34px;
+// $el-carousel__container:('height':'500px');
+$--el-menu-hover-bg-color:rgb(0 0 0 / 0%);
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $header: $-header,
+  $colors: $-colors,
+  $menu:('item-font-size': 1.3rem),
+  $main:$-header
+);
+
+@use './dark.scss';
