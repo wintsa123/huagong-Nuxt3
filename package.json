@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "description": "nuxt3-Huagong",
   "repository": {
-    "type": "git",
-    "url": "git://github.com/element-plus/element-plus-nuxt-starter"
+    "type": "https",
+    "url": "https://gitee.com/wintsa/huagongWeb.git"
   },
   "author": "wintsa",
   "license": "MIT",

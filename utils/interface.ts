@@ -139,8 +139,10 @@ export interface ISearchBase {
     priority?: number;
     status?: number;
     click?: number;
-    tags?: number[] | ITag[];
-    types?: number[] | IType[];
+    pageSize?:string;
+    nowPage?:string;
+    tags?: number[] | ITag[]|string;
+    types?: number[] | IType[]|string;
     users?: number[] | IUser[];
     keyword?: string;
   }

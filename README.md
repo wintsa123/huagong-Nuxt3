@@ -1,4 +1,4 @@
-# Element Plus with Nuxt 3 Minimal Starter
+# 化工企业官网 with Nuxt 3 Minimal Starter
 
 <pre align="center">
 🏗 Working in Progress

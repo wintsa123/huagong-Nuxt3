@@ -5,6 +5,7 @@ body,
 #app {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html.dark {
@@ -20,4 +21,10 @@ a {
 {
   text-decoration:none
 
+}
+p{
+  color:#828585
+}
+.el-divider--horizontal{
+  margin: 0!important;
 }

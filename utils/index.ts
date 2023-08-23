@@ -28,7 +28,7 @@ interface IResponse<DataT> {
   message: string;
 }
 //首页轮播图 客户端
-export const getFetch = <T>( url:NitroFetchRequest, params:Record<string, any>, options? : Options<unknown>) => {
+export const getFetch = <T>( url:NitroFetchRequest, params:Record<string, any>|undefined, options? : Options<unknown>) => {
   // 接口传参要求
   const config = useRuntimeConfig();
   const myObject = {
