@@ -1,5 +1,7 @@
 import { getFetch } from '@/utils/index'
-import { IQiniuData, ITag,IArticle } from '@/utils/interface'
+import { alovaInstance } from '@/utils/alova'
+
+import { IQiniuData, ITag, IArticle } from '@/utils/interface'
 interface IResponse<DataT> {
     code: number;
     data: DataT | null;
@@ -33,16 +35,38 @@ export const getTagList = async (): Promise<AsyncData<ITag, null>> => {
                     item.checked = false;
                 }
                 return item;
-
             })
-        }, lazy: true,server:false
+        }, lazy: true, server: false
     });
     return result as AsyncData<ITag, null>
 }
-export const getAllArticle = async (params:IArticle): Promise<AsyncData<IArticle, null>> => {
+export const getAllArticle = async (params: IArticle): Promise<AsyncData<IArticle, null>> => {
     const result = await getFetch('/article/list', params, {
-        lazy: true
+        lazy: true, server: false
     });
     return result as AsyncData<IArticle, null>
 }
+
+export const todoListGetter = (nowPage: any, pageSize: any, types?: any, tags?: any) => {
+    let params = { nowPage, pageSize, types, tags }
+    if (String(tags.value).length<1) {
+        params = Object.assign({}, params);
+        delete params.tags;
+    }
+    return alovaInstance.Get('/article/list', {
+        params: params,
+        transformData: (input: any) => {
+            input.rows = input.rows.map((item: any) => {
+                item.openWindow = false;
+                return item;
+            })
+            return input
+        },
+
+        headers: {
+            'Content-Type': 'application/json;charset=UTF-8'
+        }
+    })
+}
+
 

@@ -1,5 +1,5 @@
 <template>
-  <div style="backgroundColor:#f9fafa;height:100vh">
+  <div style="backgroundColor:#f9fafa;height:auto">
     <div style="backgroundColor:white" :style="{height: '24em'}">
       <SearchTop></SearchTop>
     </div>

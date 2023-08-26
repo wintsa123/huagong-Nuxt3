@@ -1,6 +1,9 @@
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 
 export default defineNuxtConfig({
+  vue: {
+    compilerOptions: { isCustomElement: tag => tag.startsWith('wc-') }
+  },
   imports: {
     dirs: [
       'composables/api'
@@ -52,6 +55,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@unocss/nuxt',
     '@nuxt/image',
+    
   ],
 
   // vueuse

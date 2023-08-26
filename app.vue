@@ -13,7 +13,7 @@
         <menuHead></menuHead>
       </el-header>
       <NuxtLoadingIndicator />
-      <el-main :style="{overflow:'hidden',}">
+      <el-main :style="{overflow:'hidden'}">
           <LazyNuxtPage />
 
       </el-main>
