@@ -1,11 +1,12 @@
 <template>
-  <div class="allContent">
+  <div class="allContent" >
 
     <div class="banner" :style="{ marginBottom: '10px' }">
       <Banner />
 
     </div>
-    <div style="backgroundColor:#f9fafa;height:auto;margin-bottom: 10px; padding-bottom: 10px;" class="product" v-if="Front['allow_product'].value">
+    <div style="backgroundColor:#f9fafa;margin-bottom: 10px; padding-bottom: 10px;" class="product"
+      v-if="Front['allow_product'].value">
 
       <el-divider content-position="center">最新产品</el-divider>
 
@@ -46,11 +47,11 @@
 <script setup lang="ts">
 // const { height } = useWindowSize()
 
-const Front=setFront()
+const Front = setFront()
 
 if (!!Front) {
-    const result=await getSetting()
-    Front.value=result.data
+  const result = await getSetting()
+  Front.value = result.data
 }
 </script>
 
@@ -66,4 +67,5 @@ if (!!Front) {
   scroll-snap-stop: always;
 
 }
+
 </style>

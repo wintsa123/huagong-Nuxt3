@@ -13,13 +13,13 @@
       </el-header>
       <NuxtLoadingIndicator />
 
-      <el-main style="overflow-y: hidden">
+      <el-main style="overflow-y: hidden;">
 
         <LazyNuxtPage />
 
       </el-main>
 
-      <el-footer class="footer">
+      <el-footer class="footer" :class="{ 'bottomlast': lastBottom }">
         <div class="container" style="line-height: 1.5;">
           <div class="row">
             <div class="footer-col">
@@ -92,7 +92,7 @@
 
       </el-footer>
     </el-container>
-  
+
   </div>
 </template>
 
@@ -128,6 +128,7 @@ const open = () => {
   const currentTime = new Date();
   time.value=currentTime
 }
+const lastBottom=ref(false)
 onMounted(()=>{
   if (Front.value['allow_home_modal'].value) {
     const todayStart = new Date();
@@ -140,10 +141,22 @@ if (!!time.value &&(new Date(time.value)>=new Date(todayStart) && new Date(time.
 } else {
   // 更新时间值为当前时间
   open()}}
-  }
+
+  window.addEventListener('scroll', () => {
+      // 当滚动到页面底部时显示页脚，否则隐藏页脚
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        lastBottom.value=true   
+         } else {
+          lastBottom.value=false   
+      }
+    });
+  
+
+}
 
 )
-// 获取今天的0点和24点时间
+
+
 
 </script>
 
@@ -190,6 +203,17 @@ ul {
   height: AUTO !important;
   background-color: #24262b;
   padding: 70px 0;
+  /* line-height: 10vh; */
+  /* display: none; */
+  /* 初始状态隐藏页脚 */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottomlast {
+  display: block !important;
+
 }
 
 .footer-col {
