@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
   vue: {
-    compilerOptions: { isCustomElement: tag => tag.startsWith('wc-') }
+    compilerOptions: { isCustomElement: (tag:any) => tag.startsWith('wc-') }
   },
   imports: {
     dirs: [
@@ -39,7 +39,7 @@ export default defineNuxtConfig({
   },
 
   // css
-  css: ['~/assets/scss/index.scss'],
+  css: ['~/assets/scss/index.scss','aos/dist/aos.css'],
 
   typescript: {
     strict: true,
@@ -55,6 +55,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@unocss/nuxt',
     '@nuxt/image',
+    'nuxt-lodash',
     
   ],
 

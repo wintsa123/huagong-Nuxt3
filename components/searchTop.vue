@@ -13,18 +13,20 @@
                 <el-form :inline="true" :model="formInline" class="demo-form-inline">
 
                     <el-form-item class="w-full">
-                        <el-input v-model="formInline.search" class="m-2 h-14" size="large"
-                            placeholder="搜索我司产品" :prefix-icon="Search" style="width: 70%" /> 
-                            <el-button color="#f0e9f6" size="large" style="height:4.4em;width: 15%"  >搜索</el-button>
+                        <el-autocomplete v-model="formInline.search" class="m-2 h-14" :fetch-suggestions="querySearchAsync" :activated="formInline.search.length==0 && !SearchHistory"
+                            placeholder="搜索我司产品" @select="handleSelect" style="width: 70%;height: 100%;" />
+
+                        <el-button color="#f0e9f6" size="large" style="height:4.4em;width: 15%"
+                            @click="navigateTo('/Product/search/' + formInline.search)">搜索</el-button>
 
 
                     </el-form-item>
-                    </el-form>
+                </el-form>
 
             </el-col>
             <el-col :span="12">
 
-                <el-image :style="{ width: '77%', height: 'auto' }" src="assets/testbg.svg" fit="fill" />
+                <el-image :style="{ width: '77%', height: 'auto' }" src="../../assets/testbg.svg" fit="fill" />
             </el-col>
 
         </el-row>
@@ -34,8 +36,39 @@
 <script setup lang="ts">
 
 import { Search } from '@element-plus/icons-vue'
+
+
+const SearchHistory = setSearchHistory()
+
+const querySearchAsync = async (queryString: string, cb: (arg: any) => void) => {
+       
+    if (queryString.length > 0) {
+        const historyData=!!SearchHistory.value &&SearchHistory.value.filter((e:any)=>e.value.includes(queryString))
+        const { data }: any = await articleByKeyWord(queryString)
+        const result = data.value.map((e: any) => {
+            let obj = { value: '' }
+            obj['value'] = e.title
+            return obj
+        })
+        const results=historyData ?useUniqBy(result.concat(historyData),'value'):result
+        console.log(results)
+        cb(results)
+
+    }else{
+        return SearchHistory.value ? SearchHistory.value:[]
+    }
+
+}
+
+
+const handleSelect = (item: Record<string, any>) => {
+    let ArrTmp=[item]
+    SearchHistory.value= !!SearchHistory.value ?useUniqBy(SearchHistory.value.concat(ArrTmp),'value'):ArrTmp
+}
+
+const route=useRoute()
 const formInline = reactive({
-    search: '',
+    search: !!route.params.search ?route.params.search:'',
 
 })
 const input1 = ref('')
@@ -57,5 +90,9 @@ const input1 = ref('')
 .grid-content {
     border-radius: 4px;
     min-height: 36px;
+}
+
+.el-autocomplete .el-input {
+    height: 100%;
 }
 </style>
