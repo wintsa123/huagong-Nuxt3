@@ -51,7 +51,6 @@ const querySearchAsync = async (queryString: string, cb: (arg: any) => void) => 
             return obj
         })
         const results=historyData ?useUniqBy(result.concat(historyData),'value'):result
-        console.log(results)
         cb(results)
 
     }else{

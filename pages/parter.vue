@@ -66,14 +66,13 @@ const FriData = ref()
 if (!!Front.value['Type_link'].value) {
     const { data,pending }: any = await getFriend()
     FriData.value = data.value
-    console.log(FriData.value)
     loading.value = pending.value
 
 }
 
 </script>
 
-<style>
+<style scoped>
 .friend-cards {
     display: flex;
     flex-wrap: wrap;

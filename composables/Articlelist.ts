@@ -5,3 +5,5 @@ export const setFront = () => useState<any>('Front')
 
 //搜索历史
 export const setSearchHistory = () => useState<any>('setSearchHistory')
+//footer共享状态
+export const FooterState = () => useState<any>('Footer',() => false)

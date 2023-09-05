@@ -1,7 +1,7 @@
 <template>
     <div>
         <ClientOnly>
-            <el-menu :key="activeIndex" :default-active="activeIndex" :router="true" class="el-menu w-full"
+            <el-menu :key="activeIndex" :default-active="activeIndex" :router="false" class="el-menu w-full"
                 :class="{ exit: disabled, back: opacity }" mode="horizontal" :ellipsis="false" :style="{ border: 0 }"
                 :background-color="styleHeader.top['background-color']" :text-color="styleHeader.top['text-color']"
                 :active-text-color="!disabled && !opacity ? 'red' : 'black'" @select="handleSelect">
@@ -26,7 +26,7 @@ const { y } = useWindowScroll()
 const disabled = ref(false)
 const opacity = ref(false)
 let histroyY = 0
-
+const openState = FooterState()
 //滚动条
 watch(y, (data) => {
     if (data < histroyY && data != 0) {
@@ -59,6 +59,7 @@ items.forEach(e => {
 })
 const changeIndex = async () => {
     activeIndex.value = '/'
+
     await navigateTo('/', { replace: true })
 }
 const styleHeader = {
@@ -75,6 +76,11 @@ const styleHeader = {
 }
 const handleSelect = async (key: string, keyPath: string[]) => {
     activeIndex.value = key
+    if (key == '/') {
+        openState.value = true
+    }else {
+        openState.value = false
+    }
     await navigateTo(key)
 }
 

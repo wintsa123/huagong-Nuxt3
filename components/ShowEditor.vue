@@ -13,7 +13,7 @@
                         <!-- <el-divider direction="vertical" border-style="dashed" :class="{'fixed':fix}" style="right: 150px;top: 37px;height: 100vh;"  /> -->
                         <!-- </el-affix> -->
                         <!-- <el-affix :offset="20"> -->
-                        <el-aside width="200px" :class="{'fixed':fix}" style="right: 20px;top: 37px;">
+                        <el-aside width="200px"  style="right: 20px;top: 37px;">
                             <h1>目录</h1>
                             <MdCatalog :editorId="id" :scrollElement="scrollElement" />
                         </el-aside>
@@ -37,7 +37,6 @@ const id = props.type;
 const scrollElement = ref()
 // const { height } = useWindowSize()
 const route =useRoute()
-console.log(route)
 const fix=computed(()=>['about','Product','callme','parter'].includes(route.name as string))
 nextTick(() => {
     if (typeof document !== 'undefined') {

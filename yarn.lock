@@ -1186,6 +1186,15 @@
   resolved "https://mirrors.cloud.tencent.com/npm/@nuxt/devalue/-/devalue-2.0.2.tgz#5749f04df13bda4c863338d8dabaf370f45ef7c7"
   integrity sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==
 
+"@nuxt/devtools-kit@^0.8.0":
+  version "0.8.2"
+  resolved "https://mirrors.cloud.tencent.com/npm/@nuxt/devtools-kit/-/devtools-kit-0.8.2.tgz#77400eb8b48f9efcfe14231425c7ab27e180047f"
+  integrity sha512-GEqpBxa/ojfhAM9HN5L/OzCADpfH9nDbcC7INHFgao6KuAu6JclTpcuV6VZP6LthsETBsd2cKAt93WY+vEJnnQ==
+  dependencies:
+    "@nuxt/kit" "^3.7.0"
+    "@nuxt/schema" "^3.7.0"
+    execa "^7.2.0"
+
 "@nuxt/image@^1.0.0-rc.1":
   version "1.0.0-rc.1"
   resolved "https://mirrors.cloud.tencent.com/npm/@nuxt/image/-/image-1.0.0-rc.1.tgz"
@@ -1204,7 +1213,7 @@
   optionalDependencies:
     ipx "^1.2.0"
 
-"@nuxt/kit@3.7.0", "@nuxt/kit@^3.0.0", "@nuxt/kit@^3.0.0-rc.9", "@nuxt/kit@^3.5.0", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.6.0", "@nuxt/kit@^3.6.5":
+"@nuxt/kit@3.7.0", "@nuxt/kit@^3.0.0", "@nuxt/kit@^3.0.0-rc.9", "@nuxt/kit@^3.5.0", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.6.0", "@nuxt/kit@^3.6.5", "@nuxt/kit@^3.7.0":
   version "3.7.0"
   resolved "https://mirrors.cloud.tencent.com/npm/@nuxt/kit/-/kit-3.7.0.tgz"
   integrity sha512-bsPRb2NTLHRacjyybhhA3pZFIqo2pxB6bcP4FQDuzlGzVTI5PtJzbfNpkmQC7q+LZt8K0pNlxKVGisDvZctk6w==
@@ -1228,7 +1237,7 @@
     unimport "^3.2.0"
     untyped "^1.4.0"
 
-"@nuxt/schema@3.7.0":
+"@nuxt/schema@3.7.0", "@nuxt/schema@^3.7.0":
   version "3.7.0"
   resolved "https://mirrors.cloud.tencent.com/npm/@nuxt/schema/-/schema-3.7.0.tgz#60e78916acea20e8c643b8ddbd16fde1bc89742d"
   integrity sha512-fNRAubny1x6rIibm/HcacnEGeAQri/FkJ5ei24aY4YjQ12+xDfi7bljfFr6C2+CrEGc1beYd4OQcUqXqEpz5+g==
@@ -3190,6 +3199,21 @@ execa@^5.1.1:
     signal-exit "^3.0.3"
     strip-final-newline "^2.0.0"
 
+execa@^7.2.0:
+  version "7.2.0"
+  resolved "https://mirrors.cloud.tencent.com/npm/execa/-/execa-7.2.0.tgz#657e75ba984f42a70f38928cedc87d6f2d4fe4e9"
+  integrity sha512-UduyVP7TLB5IcAQl+OzLyLcS/l32W/GLg+AhHJ+ow40FOk2U3SAllPwR44v4vmdFwIWqpdwxxpQbF1n5ta9seA==
+  dependencies:
+    cross-spawn "^7.0.3"
+    get-stream "^6.0.1"
+    human-signals "^4.3.0"
+    is-stream "^3.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^5.1.0"
+    onetime "^6.0.0"
+    signal-exit "^3.0.7"
+    strip-final-newline "^3.0.0"
+
 execa@^8.0.1:
   version "8.0.1"
   resolved "https://mirrors.cloud.tencent.com/npm/execa/-/execa-8.0.1.tgz#51f6a5943b580f963c3ca9c6321796db8cc39b8c"
@@ -3359,7 +3383,7 @@ get-port-please@^3.0.1, get-port-please@^3.0.2:
   resolved "https://mirrors.cloud.tencent.com/npm/get-port-please/-/get-port-please-3.0.2.tgz#72c1880307ab077942d728744eb17257a0beb195"
   integrity sha512-c14cAITf0E+uqdxGALvyYHwOL7UsnWcv3oDtgDAZksiVSGN87xlWVUWGZcmWQU3cICdaOxT+6LdQzUfK2ei1SA==
 
-get-stream@^6.0.0:
+get-stream@^6.0.0, get-stream@^6.0.1:
   version "6.0.1"
   resolved "https://mirrors.cloud.tencent.com/npm/get-stream/-/get-stream-6.0.1.tgz#a262d8eef67aced57c2852ad6167526a43cbf7b7"
   integrity sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==
@@ -3570,6 +3594,11 @@ human-signals@^2.1.0:
   version "2.1.0"
   resolved "https://mirrors.cloud.tencent.com/npm/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+
+human-signals@^4.3.0:
+  version "4.3.1"
+  resolved "https://mirrors.cloud.tencent.com/npm/human-signals/-/human-signals-4.3.1.tgz#ab7f811e851fca97ffbd2c1fe9a958964de321b2"
+  integrity sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==
 
 human-signals@^5.0.0:
   version "5.0.0"
@@ -4502,6 +4531,57 @@ nuxt-lodash@^2.5.0:
     "@types/lodash-es" "^4.17.7"
     lodash-es "^4.17.21"
 
+nuxt-simple-sitemap@^3.2.6:
+  version "3.2.6"
+  resolved "https://mirrors.cloud.tencent.com/npm/nuxt-simple-sitemap/-/nuxt-simple-sitemap-3.2.6.tgz#07760a9ed96c40a112b422eee950e96ee5b58f08"
+  integrity sha512-g4whwqSyVj/oFE3IJTatu0QcVUDRVkjhB2Ew32nRYmmQIqewpZU6Wrx5CjGfhrDOFvH8KSks6NjB7tB5biET1A==
+  dependencies:
+    "@nuxt/devtools-kit" "^0.8.0"
+    "@nuxt/kit" "^3.7.0"
+    chalk "^5.3.0"
+    defu "^6.1.2"
+    escape-string-regexp "^5.0.0"
+    fast-glob "^3.3.1"
+    knitwork "^1.0.0"
+    nuxt-site-config "^1.0.11"
+    nuxt-site-config-kit "^1.0.11"
+    pathe "^1.1.1"
+    radix3 "^1.1.0"
+    semver "^7.5.4"
+    site-config-stack "^1.0.11"
+    ufo "^1.3.0"
+
+nuxt-site-config-kit@1.0.11, nuxt-site-config-kit@^1.0.11:
+  version "1.0.11"
+  resolved "https://mirrors.cloud.tencent.com/npm/nuxt-site-config-kit/-/nuxt-site-config-kit-1.0.11.tgz#634145e3e7f813650004fa7eb6604e3460b6eaad"
+  integrity sha512-kGt/5+FLMxHudTImWNSOXt0zYcfA1be/3HgVX/CMxDU2sir2wq4DCpk4WNRcRhewEkmRC5uRsCPVyvbqqVCIgw==
+  dependencies:
+    "@nuxt/kit" "^3.7.0"
+    "@nuxt/schema" "^3.7.0"
+    pkg-types "^1.0.3"
+    site-config-stack "1.0.11"
+    ufo "^1.3.0"
+
+nuxt-site-config@^1.0.11:
+  version "1.0.11"
+  resolved "https://mirrors.cloud.tencent.com/npm/nuxt-site-config/-/nuxt-site-config-1.0.11.tgz#0f9753bc5d3939a10ea11fc96834380ee5d5b132"
+  integrity sha512-L+R8785j3An3QIWo6LdrtX2L123iNkp91gLbw1FRnj686WbYMD0FTCqO5hEcVsLdIeBAVPszRMLcxISN4B7NIQ==
+  dependencies:
+    "@nuxt/kit" "^3.7.0"
+    "@nuxt/schema" "^3.7.0"
+    nuxt-site-config-kit "1.0.11"
+    pathe "^1.1.1"
+    site-config-stack "1.0.11"
+    ufo "^1.3.0"
+
+nuxt-swiper@^1.2.2:
+  version "1.2.2"
+  resolved "https://mirrors.cloud.tencent.com/npm/nuxt-swiper/-/nuxt-swiper-1.2.2.tgz#7b855c4948edb2e8ba4f98eea457a821b84ff53b"
+  integrity sha512-y4s/srISP4OuhXbYg9/W1/6EWnbcoHRGEKBKAvGP0I2h0b3enhqZNEk7854M3F89ys8waacBXektPzamgl5xwQ==
+  dependencies:
+    "@nuxt/kit" "^3.7.0"
+    swiper "^10.2.0"
+
 nuxt@^3.6.5, nuxt@^3.7.0:
   version "3.7.0"
   resolved "https://mirrors.cloud.tencent.com/npm/nuxt/-/nuxt-3.7.0.tgz"
@@ -5330,7 +5410,7 @@ shebang-regex@^3.0.0:
   resolved "https://mirrors.cloud.tencent.com/npm/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-signal-exit@^3.0.0, signal-exit@^3.0.3:
+signal-exit@^3.0.0, signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://mirrors.cloud.tencent.com/npm/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
@@ -5374,6 +5454,13 @@ sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://mirrors.cloud.tencent.com/npm/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
+
+site-config-stack@1.0.11, site-config-stack@^1.0.11:
+  version "1.0.11"
+  resolved "https://mirrors.cloud.tencent.com/npm/site-config-stack/-/site-config-stack-1.0.11.tgz#26ca93eefafff27a80bc6dc7e78be4bbaa72fa40"
+  integrity sha512-JPHqf0s5/3DEd0TkT9noGlMNNOEVz0bVHbfHDTcebup97poNwZ5CXjj1FYYcwRVbqa7cJjgi6jTmo2b0XslQ6g==
+  dependencies:
+    ufo "^1.3.0"
 
 slash@^4.0.0:
   version "4.0.0"
@@ -5541,6 +5628,11 @@ svgo@^3.0.2:
     css-tree "^2.2.1"
     csso "^5.0.5"
     picocolors "^1.0.0"
+
+swiper@^10.2.0:
+  version "10.2.0"
+  resolved "https://mirrors.cloud.tencent.com/npm/swiper/-/swiper-10.2.0.tgz#e7369ff56f4e10069f2244a4436f732b8925deb0"
+  integrity sha512-nktQsOtBInJjr3f5DicxC8eHYGcLXDVIGPSon0QoXRaO6NjKnATCbQ8SZsD3dN1Ph1RH4EhVPwSYCcuDRFWHGQ==
 
 tapable@^1.0.0:
   version "1.1.3"

@@ -1,5 +1,5 @@
 {
-  "name": "huagongSa",
+  "name": "wintsa",
   "packageManager": "yarn",
   "version": "0.1.0",
   "description": "nuxt3-Huagong",
@@ -31,6 +31,7 @@
     "aos": "^2.3.4",
     "element-plus": "^2.3.6",
     "md-editor-v3": "^4.4.0",
+    "nuxt-swiper": "^1.2.2",
     "wc-waterfall": "^0.0.7"
   },
   "devDependencies": {
@@ -42,6 +43,7 @@
     "consola": "^3.1.0",
     "nuxt": "^3.7.0",
     "nuxt-lodash": "^2.5.0",
+    "nuxt-simple-sitemap": "^3.2.6",
     "sass": "^1.63.4",
     "typescript": "^5.1.3"
   },

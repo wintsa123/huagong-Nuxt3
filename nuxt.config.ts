@@ -1,8 +1,12 @@
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
+import {baseurl} from './config'
 
 export default defineNuxtConfig({
   vue: {
     compilerOptions: { isCustomElement: (tag:any) => tag.startsWith('wc-') }
+  },
+  site: {
+    url: 'http://wintsa.club',
   },
   imports: {
     dirs: [
@@ -12,16 +16,16 @@ export default defineNuxtConfig({
  
   image: {
     cloudinary: {
-      baseURL: "http://rzm8kqg28.hn-bkt.clouddn.com/",
+      baseURL: "http://wintsa.club/",
     },
   },
   runtimeConfig: {
     // The private keys which are only available server-side
-    apiServeBase: 'http://127.0.0.1:3300',
+    apiServeBase: baseurl,
     // Keys within public are also exposed client-side
     public: {
-      QINIU_CDN_URL : 'http://rzm8kqg28.hn-bkt.clouddn.com/',
-      apiBase: 'http://127.0.0.1:3300'
+      QINIU_CDN_URL : 'http://wintsa.club/',
+      apiBase: baseurl
     }
   },
   app: {
@@ -56,6 +60,8 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@nuxt/image',
     'nuxt-lodash',
+    'nuxt-simple-sitemap',
+    'nuxt-swiper'
     
   ],
 
